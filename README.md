@@ -3,6 +3,9 @@
 Repositorio del primer proyecto de la clase de Introducción al Desarrollo Web
 
 Integrantes:
+
 José David Lemarroy Acuña
+
 David Fernando Avila Díaz
+
 Braulio Alejandro Lozano Cuevas
