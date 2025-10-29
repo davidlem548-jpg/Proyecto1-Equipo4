@@ -139,21 +139,3 @@ class Case(SQLModel, table=True):
     # lossRatio() float (claim.componentsSum() / policy.annual_premium)
     # bindToIncidentDays() int (days between bind_date and incident.date)
     # riskSignals() list (list of risk signals)
-
-# -----------------------------
-# Clase: DashboardController
-# -----------------------------
-class DashboardController(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    name: Optional[str]
-    total_cases: Optional[int]
-    fraud_rate: Optional[float]
-    avg_premium: Optional[float]
-    avg_claim_amount: Optional[float]
-    # Con casos
-    cases: List[Case] = Relationship()
-    
-    # Métodos
-    # KPIs() (totalClaims, fraudRrate, avgPremium, avgLossRatio, ...)
-    # histogtramByHour() 
-    # bySeverity() 
