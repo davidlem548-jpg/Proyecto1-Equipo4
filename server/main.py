@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from datetime import date
 from .db import init_db, get_session
 from .models import (
-    Insured, Policy, Vehicle, Incident, Claim, Case, DashboardController
+    Insured, Policy, Vehicle, Incident, Claim, Case
 )
 
 # Pydantic schemas for request/response
@@ -134,7 +134,13 @@ class CaseUpdate(BaseModel):
     claim_id: Optional[int] = None
 
 # Case response with nested objects
-class CaseResponse(Case):
+class CaseResponse(BaseModel):  # ← Heredar de BaseModel, no de Case
+    id: Optional[int] = None
+    insured_id: Optional[int] = None
+    policy_id: Optional[int] = None
+    vehicle_id: Optional[int] = None
+    incident_id: Optional[int] = None
+    claim_id: Optional[int] = None
     insured: Optional[Insured] = None
     policy: Optional[Policy] = None
     vehicle: Optional[Vehicle] = None
