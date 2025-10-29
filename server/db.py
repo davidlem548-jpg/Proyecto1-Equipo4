@@ -8,7 +8,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 def init_db():
-    from .models import Insurer, PolicyHolder, Policy, Claim
+    from server.models import Insured, Policy, Vehicle, Incident, Claim, Case
     SQLModel.metadata.create_all(engine)
 
 def get_session():
