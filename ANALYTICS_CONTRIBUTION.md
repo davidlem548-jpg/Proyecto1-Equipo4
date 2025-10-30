@@ -44,6 +44,9 @@ Este módulo agrega capacidades de análisis avanzado al dashboard de seguros, i
 
 ## Enlaces del proyecto
 
+### 🌐 Página pública del proyecto:
+**🔗 https://davidlem548-jpg.github.io/Proyecto1-Equipo4/**
+
 ### Interfaces del sistema:
 - **Dashboard principal:** http://127.0.0.1:8000/client/index.html
 - **Analytics complementario:** http://127.0.0.1:8000/client/analytics.html
