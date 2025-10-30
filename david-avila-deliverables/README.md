@@ -83,11 +83,15 @@ Este proyecto implementa un **sistema avanzado de análisis de seguros** con cap
 
 ## Enlaces de Acceso
 
-### 🌐 Página Web del Cliente
+### 🌐 Página Pública del Proyecto
+- **🔗 Sitio Oficial:** https://davidlem548-jpg.github.io/Proyecto1-Equipo4/
+- **📋 Documentación Completa:** Accesible directamente desde la página pública
+
+### 💻 Desarrollo Local  
 - **Dashboard Principal:** http://127.0.0.1:8000/david-avila-deliverables/frontend/index.html
 - **Analytics Avanzado:** http://127.0.0.1:8000/david-avila-deliverables/frontend/analytics.html
 
-### 🔗 Health Endpoint Principal de la API
+### 🔗 API Endpoints
 - **Health Check:** http://127.0.0.1:8000/health
 - **Documentación API:** http://127.0.0.1:8000/docs
 - **Estadísticas Sistema:** http://127.0.0.1:8000/stats
@@ -186,16 +190,27 @@ david-avila-deliverables/
 
 ---
 
-## Live Demo
+## 🌐 Demostración Pública en Línea
 
-El proyecto está configurado para **demostración en vivo** con:
+### **Página Web Oficial del Proyecto**
+**🔗 https://davidlem548-jpg.github.io/Proyecto1-Equipo4/**
+
+Esta página pública muestra:
+- **Contribuciones completas** del módulo analytics desarrollado
+- **Características técnicas** detalladas del sistema
+- **Información del equipo** y arquitectura del proyecto
+- **Acceso directo** a todas las funcionalidades implementadas
+
+### Live Demo Local
+
+El proyecto también está configurado para **demostración local** con:
 
 1. **Datos de demostración** automáticos cuando API no disponible
 2. **Visualizaciones interactivas** con datos realistas
 3. **Navegación fluida** entre secciones del dashboard
 4. **Responsive design** para presentación en cualquier dispositivo
 
-### Comandos para Demo
+### Comandos para Demo Local
 ```bash
 # Inicio rápido para demostración
 cd Proyecto1-Equipo4
