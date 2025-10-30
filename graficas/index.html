@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard – Insurance Claims</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; }
+    .controls { display: grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    label { font-size: 14px; color: #333; }
+    select, button { padding: 8px; font-size: 14px; }
+    .hint { font-size: 12px; color: #666; margin-top: -6px; }
+    .row { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .card { padding: 16px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  </style>
+</head>
+<body>
+  <h1>Insurance Claims – Visualizador CSV</h1>
+
+  <div class="controls card">
+    <div>
+      <label for="csvSelect">Archivo CSV</label><br />
+      <select id="csvSelect">
+        <option value="../client/data/insurance_claims_clean.csv">insurance_claims_clean.csv</option>
+        <option value="../client/data/insurance_claims.csv">insurance_claims.csv</option>
+      </select>
+      <div class="hint">Cambia entre el original y el clean.</div>
+    </div>
+
+    <div>
+      <label for="xColumn">Columna X</label><br />
+      <select id="xColumn"></select>
+      <div class="hint">Usada para barras / histograma / eje X (scatter).</div>
+    </div>
+
+    <div>
+      <label for="yColumn">Columna Y (opcional)</label><br />
+      <select id="yColumn"></select>
+      <div class="hint">Si eliges X e Y numéricas, se hace dispersión.</div>
+    </div>
+
+    <div>
+      <label for="chartType">Tipo de gráfica</label><br />
+      <select id="chartType">
+        <option value="auto">Auto (según tipos)</option>
+        <option value="bar">Barras (frecuencia por categoría)</option>
+        <option value="hist">Histograma (columna numérica)</option>
+        <option value="scatter">Dispersión (X & Y numéricas)</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="binsInput"># bins (hist)</label><br />
+      <select id="binsInput">
+        <option>10</option>
+        <option selected>20</option>
+        <option>30</option>
+        <option>40</option>
+      </select>
+    </div>
+
+    <div style="align-self: end;">
+      <button id="renderBtn">Render</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h3 id="chartTitle">Gráfica</h3>
+      <canvas id="mainChart" height="120"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Resumen de columnas</h3>
+      <pre id="summary" style="white-space: pre-wrap;"></pre>
+    </div>
+  </div>
+
+  <script defer src="charts.js"></script>
+</body>
+</html>
