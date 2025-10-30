@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Seguros - Contribuciones del Equipo 4</title>
+    <meta name="description" content="Proyecto de Sistema de Seguros desarrollado por el Equipo 4. Contribuciones técnicas de David Fernando Ávila Díaz en módulo de analytics y análisis avanzado.">
+    
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xg1gPfayDPBNbp3hgPyG6tUeVaLb5t1fwYGDkjzVczj7Rj7VYhQMQJ9LZh5ZZLrD" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">
+                <i class="bi bi-shield-check me-2"></i>
+                Sistema de Seguros
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contribuciones">Contribuciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#analytics">Módulo Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipo">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tecnologias">Tecnologías</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold text-white mb-4">
+                        Sistema de Seguros
+                        <span class="text-warning">Inteligente</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-5">
+                        Proyecto académico desarrollado por el Equipo 4 para la materia de Introducción al Desarrollo Web (COM-11117) - ITAM 2025
+                    </p>
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <h3 class="text-warning fw-bold">1,247</h3>
+                                <p class="text-white-50 mb-0">Pólizas Activas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <h3 class="text-warning fw-bold">856</h3>
+                                <p class="text-white-50 mb-0">Reclamos Procesados</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <h3 class="text-warning fw-bold">23</h3>
+                                <p class="text-white-50 mb-0">Fraudes Detectados</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <h3 class="text-warning fw-bold">97%</h3>
+                                <p class="text-white-50 mb-0">Precisión Analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contribuciones" class="btn btn-warning btn-lg me-3">
+                        <i class="bi bi-code-slash me-2"></i>Ver Contribuciones
+                    </a>
+                    <a href="#analytics" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-graph-up me-2"></i>Módulo Analytics
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribuciones Principales -->
+    <section id="contribuciones" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3">Contribuciones Técnicas</h2>
+                    <p class="lead text-muted">
+                        Desarrollo especializado del módulo de analytics y análisis avanzado por David Fernando Ávila Díaz
+                    </p>
+                </div>
+            </div>
+
+            <!-- Perfil del Contribuidor Principal -->
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center mb-4 mb-md-0">
+                                    <div class="avatar-circle mx-auto mb-3">
+                                        <i class="bi bi-person-badge display-4 text-primary"></i>
+                                    </div>
+                                    <h4 class="fw-bold text-primary mb-1">David Fernando Ávila Díaz</h4>
+                                    <p class="text-muted mb-0">CU: 197851</p>
+                                    <span class="badge bg-primary mt-2">Desarrollador Analytics</span>
+                                </div>
+                                <div class="col-md-9">
+                                    <h5 class="fw-bold mb-3">Módulo de Analytics y Visualización Avanzada</h5>
+                                    <p class="text-muted mb-4">
+                                        Desarrollo completo del sistema de análisis avanzado para el dashboard de seguros, 
+                                        implementando métricas de riesgo, análisis predictivo y visualizaciones interactivas 
+                                        con Chart.js. Integración perfecta con el backend FastAPI existente.
+                                    </p>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <span>Arquitectura Modular</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <span>Cliente API Robusto</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <span>Detección de Fraudes</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <span>Visualizaciones Interactivas</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Características Técnicas -->
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h4 class="fw-bold">Análisis de Riesgo</h4>
+                        <p class="text-muted">
+                            Cálculo dinámico del índice de riesgo basado en ratio claims/policies 
+                            con algoritmos de detección de tendencias y patrones.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-dot text-primary"></i> Índice de Riesgo Dinámico</li>
+                            <li><i class="bi bi-dot text-primary"></i> Ratio de Siniestralidad</li>
+                            <li><i class="bi bi-dot text-primary"></i> Score de Cartera</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-exclamation"></i>
+                        </div>
+                        <h4 class="fw-bold">Detección de Fraudes</h4>
+                        <p class="text-muted">
+                            Sistema inteligente de reconocimiento de patrones anómalos 
+                            con alertas automáticas y clasificación de riesgo.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-dot text-primary"></i> Algoritmos de Patrón</li>
+                            <li><i class="bi bi-dot text-primary"></i> Alertas Automáticas</li>
+                            <li><i class="bi bi-dot text-primary"></i> Clasificación de Riesgo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                        <h4 class="fw-bold">Visualizaciones</h4>
+                        <p class="text-muted">
+                            Gráficas interactivas con Chart.js 4.4.6, dashboards responsive 
+                            y configuraciones avanzadas para análisis visual.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-dot text-primary"></i> Chart.js Avanzado</li>
+                            <li><i class="bi bi-dot text-primary"></i> Dashboards Responsive</li>
+                            <li><i class="bi bi-dot text-primary"></i> Interacciones Dinámicas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulo Analytics Detallado -->
+    <section id="analytics" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3">Módulo Analytics</h2>
+                    <p class="lead text-muted">
+                        Sistema completo de análisis avanzado desarrollado específicamente para el proyecto
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-code-slash me-2"></i>Archivos Desarrollados</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="file-list">
+                                <div class="file-item">
+                                    <i class="bi bi-file-earmark-code text-warning"></i>
+                                    <div>
+                                        <strong>dashboard-core.js</strong>
+                                        <small class="text-muted d-block">Core funcional con Chart.js y sistema de gráficas</small>
+                                    </div>
+                                </div>
+                                <div class="file-item">
+                                    <i class="bi bi-file-earmark-code text-info"></i>
+                                    <div>
+                                        <strong>api-client.js</strong>
+                                        <small class="text-muted d-block">Cliente API robusto con cache inteligente</small>
+                                    </div>
+                                </div>
+                                <div class="file-item">
+                                    <i class="bi bi-file-earmark-code text-success"></i>
+                                    <div>
+                                        <strong>analytics.js</strong>
+                                        <small class="text-muted d-block">Motor de análisis avanzado y métricas</small>
+                                    </div>
+                                </div>
+                                <div class="file-item">
+                                    <i class="bi bi-file-earmark text-primary"></i>
+                                    <div>
+                                        <strong>analytics.html</strong>
+                                        <small class="text-muted d-block">Interfaz de análisis complementario</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="bi bi-gear-fill me-2"></i>Stack Tecnológico</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-stack">
+                                <div class="tech-item">
+                                    <span class="badge bg-primary">Frontend</span>
+                                    <span>HTML5, Bootstrap 5.3.8, JavaScript ES6+</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="badge bg-warning">Visualización</span>
+                                    <span>Chart.js 4.4.6 con configuraciones avanzadas</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="badge bg-info">API</span>
+                                    <span>Cliente robusto con cache de 5 minutos</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="badge bg-success">Styling</span>
+                                    <span>CSS moderno con variables y responsive design</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="badge bg-danger">Performance</span>
+                                    <span>Cache inteligente, manejo de errores, fallbacks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Características Avanzadas -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0"><i class="bi bi-lightning-fill me-2"></i>Características Avanzadas</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="advanced-feature">
+                                        <i class="bi bi-clock-history text-primary"></i>
+                                        <div>
+                                            <h6 class="fw-bold">Cache Inteligente</h6>
+                                            <p class="text-muted mb-0">Sistema de cache con invalidación automática cada 5 minutos para optimizar rendimiento</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="advanced-feature">
+                                        <i class="bi bi-shield-check text-success"></i>
+                                        <div>
+                                            <h6 class="fw-bold">Manejo de Errores</h6>
+                                            <p class="text-muted mb-0">Sistema robusto con fallbacks automáticos y datos demo de respaldo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="advanced-feature">
+                                        <i class="bi bi-phone text-info"></i>
+                                        <div>
+                                            <h6 class="fw-bold">Responsive Design</h6>
+                                            <p class="text-muted mb-0">Diseño mobile-first completamente responsive para todos los dispositivos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="advanced-feature">
+                                        <i class="bi bi-browser-chrome text-warning"></i>
+                                        <div>
+                                            <h6 class="fw-bold">Compatibilidad Cross-Browser</h6>
+                                            <p class="text-muted mb-0">Soporte completo para navegadores modernos con polyfills necesarios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3">Equipo de Desarrollo</h2>
+                    <p class="lead text-muted">
+                        Proyecto colaborativo desarrollado por estudiantes del ITAM para COM-11117
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="fw-bold">José David Lemarroy Acuña</h5>
+                            <p class="text-primary mb-2">Backend y Arquitectura</p>
+                            <p class="text-muted">
+                                Desarrollo del backend con FastAPI, diseño de la arquitectura del sistema, 
+                                implementación de APIs REST y gestión de base de datos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="fw-bold">Braulio Alejandro Lozano Cuevas</h5>
+                            <p class="text-success mb-2">Frontend y Interfaz</p>
+                            <p class="text-muted">
+                                Desarrollo de interfaces de usuario, implementación de componentes frontend, 
+                                diseño de experiencia de usuario y integración con APIs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="fw-bold">Mariana Márquez Gil</h5>
+                            <p class="text-info mb-2">Experiencia de Usuario</p>
+                            <p class="text-muted">
+                                Diseño de experiencia de usuario, investigación de usabilidad, 
+                                prototipado de interfaces y optimización de flujos de usuario.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-card highlighted">
+                        <div class="team-avatar">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="fw-bold">David Fernando Ávila Díaz</h5>
+                            <p class="text-warning mb-2">Módulo Analytics (CU: 197851)</p>
+                            <p class="text-muted">
+                                Desarrollo completo del módulo de analytics, análisis de datos avanzado, 
+                                visualizaciones interactivas, sistema de detección de fraudes y métricas de riesgo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 bg-light">
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold mb-3">Proyecto Académico</h5>
+                            <p class="text-muted mb-0">
+                                Este sistema representa un esfuerzo colaborativo para aplicar conocimientos 
+                                de desarrollo web en un contexto práctico. Cada miembro del equipo contribuyó 
+                                con sus fortalezas para crear una solución integral de gestión de seguros.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section id="tecnologias" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3">Stack Tecnológico</h2>
+                    <p class="lead text-white-50">
+                        Tecnologías modernas utilizadas en el desarrollo del proyecto
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="bi bi-bootstrap"></i>
+                        </div>
+                        <h5 class="fw-bold">Bootstrap 5.3.8</h5>
+                        <p class="text-white-50">Framework CSS para diseño responsive y componentes UI modernos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h5 class="fw-bold">JavaScript ES6+</h5>
+                        <p class="text-white-50">JavaScript moderno con clases, async/await y módulos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="bi bi-bar-chart"></i>
+                        </div>
+                        <h5 class="fw-bold">Chart.js 4.4.6</h5>
+                        <p class="text-white-50">Biblioteca de visualización para gráficas interactivas</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <h5 class="fw-bold">FastAPI</h5>
+                        <p class="text-white-50">Framework Python para APIs REST de alto rendimiento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <span class="badge bg-primary px-3 py-2">HTML5 Semántico</span>
+                        <span class="badge bg-success px-3 py-2">CSS Grid & Flexbox</span>
+                        <span class="badge bg-warning px-3 py-2">Responsive Design</span>
+                        <span class="badge bg-info px-3 py-2">Progressive Enhancement</span>
+                        <span class="badge bg-danger px-3 py-2">Web Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h5 class="fw-bold mb-3">Sistema de Seguros - Equipo 4</h5>
+                    <p class="text-muted mb-4">
+                        Proyecto desarrollado para COM-11117 - Introducción al Desarrollo Web<br>
+                        Instituto Tecnológico Autónomo de México (ITAM) - 2025
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://github.com/davicho/Proyecto1-Equipo4" class="btn btn-outline-primary">
+                            <i class="bi bi-github me-2"></i>Repositorio
+                        </a>
+                        <a href="#inicio" class="btn btn-primary">
+                            <i class="bi bi-arrow-up me-2"></i>Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-xg1gPfayDPBNbp3hgPyG6tUeVaLb5t1fwYGDkjzVczj7Rj7VYhQMQJ9LZh5ZZLrD" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

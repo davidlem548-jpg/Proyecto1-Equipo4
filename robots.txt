@@ -1,0 +1,21 @@
+# Robots.txt for Insurance System - Team 4
+# Academic project COM-11117 - ITAM 2025
+
+User-agent: *
+Allow: /
+
+# Disallow development and server files
+Disallow: /server/
+Disallow: /client/
+Disallow: /data/
+Disallow: *.db
+Disallow: *.py
+Disallow: *.csv
+
+# Allow assets and main pages
+Allow: /assets/
+Allow: /index.html
+Allow: /404.html
+
+# Sitemap location
+Sitemap: https://davicho.github.io/Proyecto1-Equipo4/sitemap.xml

@@ -1,0 +1,77 @@
+# GitHub Pages Configuration for Insurance System Project
+# Team 4 - COM-11117 ITAM 2025
+
+# Site settings
+title: "Sistema de Seguros - Equipo 4"
+description: "Proyecto académico de sistema de seguros desarrollado por el Equipo 4. Contribuciones técnicas especializadas en módulo de analytics por David Fernando Ávila Díaz."
+url: "https://davicho.github.io"
+baseurl: "/Proyecto1-Equipo4"
+
+# Author information
+author:
+  name: "Equipo 4"
+  email: "david.avila@itam.mx"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# GitHub Pages settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - server/
+  - client/
+  - data/
+  - database.db
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+# Include files
+include:
+  - assets/
+  - _config.yml
+
+# SEO and social settings
+social:
+  name: "Sistema de Seguros - Equipo 4"
+  links:
+    - "https://github.com/davicho/Proyecto1-Equipo4"
+
+# Collections (if needed for future expansion)
+collections:
+  contributions:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "Equipo 4"
+
+# Analytics (if needed)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Site verification (if needed)
+# google_site_verification: "verification_string"
+
+# GitHub Pages specific settings
+repository: "davicho/Proyecto1-Equipo4"
+github_username: "davicho"
+
+# Language and locale
+lang: "es-MX"
+timezone: "America/Mexico_City"
