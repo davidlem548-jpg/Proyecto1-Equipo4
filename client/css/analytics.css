@@ -1,0 +1,226 @@
+/* Analytics Advanced Styling */
+.analytics-card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.analytics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-card .card-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.25rem;
+}
+
+[data-bs-theme="dark"] .analytics-card .card-header {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Advanced KPI Indicators */
+.risk-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(from 0deg, #dc3545 0deg 120deg, #ffc107 120deg 240deg, #198754 240deg 360deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.risk-indicator::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bs-body-bg);
+  position: absolute;
+}
+
+.metric-chart {
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 193, 7, 0.2) 50%, rgba(255, 193, 7, 0.4) 100%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-chart::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(90deg, #ffc107 0%, #fd7e14 100%);
+  border-radius: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fraud-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.fraud-indicator::after {
+  content: '⚠';
+  font-size: 16px;
+}
+
+.score-gauge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: conic-gradient(from -90deg, #198754 0deg 252deg, #e9ecef 252deg 360deg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-gauge::before {
+  content: '✓';
+  color: #198754;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Chart Containers */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Heatmap Styling */
+#riskHeatmap {
+  background: linear-gradient(45deg, rgba(220, 53, 69, 0.1) 0%, rgba(255, 193, 7, 0.1) 50%, rgba(25, 135, 84, 0.1) 100%);
+  border-radius: 8px;
+}
+
+/* Insights Styling */
+.insight-item {
+  padding: 0.75rem;
+  background: rgba(var(--bs-primary-rgb), 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .insight-item {
+  background: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+/* Alert Styling */
+.alert-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.2) 100%);
+  border-left: 3px solid #ffc107;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scaleY(0.8);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analytics-card {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .analytics-card .card-body {
+    padding: 1rem;
+  }
+  
+  .metric-chart, .risk-indicator, .fraud-indicator, .score-gauge {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .insight-item {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Dark Theme Specific */
+[data-bs-theme="dark"] .analytics-card {
+  background: #1a1d23;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .insight-item {
+  background: rgba(108, 117, 125, 0.2);
+  border-left-color: var(--bs-info);
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Interactive Elements */
+.btn-group .btn-check:checked + .btn {
+  background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
+  border-color: var(--bs-primary);
+  color: white;
+}
+
+/* Tooltip Styling */
+.custom-tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

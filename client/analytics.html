@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics Avanzado - Seguros Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/analytics.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg border-bottom sticky-top bg-body">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Seguros • Dashboard</a>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary btn-sm" href="index.html">Dashboard</a>
+        <a class="btn btn-outline-secondary btn-sm" href="policies.html">Pólizas</a>
+        <a class="btn btn-outline-secondary btn-sm" href="claims.html">Reclamos</a>
+        <a class="btn btn-primary btn-sm" href="analytics.html">Analytics</a>
+        <button id="themeBtn" class="btn btn-secondary btn-sm">Tema</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid py-4">
+    <!-- Header Section -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h1 class="h3 mb-1">Analytics Avanzado</h1>
+            <p class="text-muted mb-0">Análisis inteligente de riesgos y tendencias</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" id="refreshAnalytics">
+              <i class="bi bi-arrow-clockwise"></i> Actualizar
+            </button>
+            <button class="btn btn-success btn-sm" id="exportReport">
+              <i class="bi bi-download"></i> Exportar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced KPIs -->
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="card analytics-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="text-muted small">Índice de Riesgo</div>
+                <div class="fs-3 fw-bold text-danger" id="riskIndex">—</div>
+                <div class="small text-success" id="riskTrend">↗ +2.3%</div>
+              </div>
+              <div class="risk-indicator" id="riskIndicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="card analytics-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="text-muted small">Ratio Siniestralidad</div>
+                <div class="fs-3 fw-bold text-warning" id="lossRatio">—</div>
+                <div class="small text-danger" id="lossRatioTrend">↘ -1.8%</div>
+              </div>
+              <div class="metric-chart" id="lossRatioChart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="card analytics-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="text-muted small">Predicción Fraudes</div>
+                <div class="fs-3 fw-bold text-info" id="fraudPrediction">—</div>
+                <div class="small text-warning" id="fraudTrend">⚠ +5.2%</div>
+              </div>
+              <div class="fraud-indicator" id="fraudIndicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="card analytics-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="text-muted small">Score de Cartera</div>
+                <div class="fs-3 fw-bold text-success" id="portfolioScore">—</div>
+                <div class="small text-success" id="portfolioTrend">↗ +7.1%</div>
+              </div>
+              <div class="score-gauge" id="scoreGauge"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Charts Row 1 -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-lg-8">
+        <div class="card analytics-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h6 class="card-title mb-0">Mapa de Calor - Riesgo por Edad vs Ocupación</h6>
+            <div class="btn-group btn-group-sm" role="group">
+              <input type="radio" class="btn-check" name="heatmapView" id="riskView" checked>
+              <label class="btn btn-outline-primary" for="riskView">Riesgo</label>
+              <input type="radio" class="btn-check" name="heatmapView" id="claimsView">
+              <label class="btn btn-outline-primary" for="claimsView">Reclamos</label>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="riskHeatmap" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="card analytics-card h-100">
+          <div class="card-header">
+            <h6 class="card-title mb-0">Distribución de Severidad</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="severityDistribution"></canvas>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small text-muted">Alto Riesgo</span>
+                <span class="badge bg-danger">23%</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small text-muted">Medio Riesgo</span>
+                <span class="badge bg-warning">45%</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small text-muted">Bajo Riesgo</span>
+                <span class="badge bg-success">32%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Charts Row 2 -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-lg-6">
+        <div class="card analytics-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h6 class="card-title mb-0">Tendencia Temporal de Reclamos</h6>
+            <select class="form-select form-select-sm" style="width: auto;" id="timeRangeSelect">
+              <option value="7d">7 días</option>
+              <option value="30d" selected>30 días</option>
+              <option value="90d">90 días</option>
+              <option value="1y">1 año</option>
+            </select>
+          </div>
+          <div class="card-body">
+            <canvas id="claimsTrend"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="card analytics-card">
+          <div class="card-header">
+            <h6 class="card-title mb-0">Análisis Predictivo de Fraudes</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="fraudAnalysis"></canvas>
+            <div class="mt-3">
+              <div class="alert alert-warning alert-sm">
+                <i class="bi bi-exclamation-triangle"></i>
+                <strong>Alerta:</strong> Incremento del 15% en patrones sospechosos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Geographic Risk Analysis -->
+    <div class="row g-3 mb-4">
+      <div class="col-12">
+        <div class="card analytics-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h6 class="card-title mb-0">Análisis Geográfico de Riesgos</h6>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary btn-sm" id="mapReset">Reset</button>
+              <button class="btn btn-outline-primary btn-sm" id="mapFullscreen">Pantalla Completa</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="geographicRisk" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Machine Learning Insights -->
+    <div class="row g-3">
+      <div class="col-12 col-lg-4">
+        <div class="card analytics-card">
+          <div class="card-header">
+            <h6 class="card-title mb-0">Insights de ML</h6>
+          </div>
+          <div class="card-body">
+            <div class="insight-item mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small">Conductores jóvenes</span>
+                <span class="badge bg-danger">Alto riesgo</span>
+              </div>
+              <div class="progress mt-1" style="height: 4px;">
+                <div class="progress-bar bg-danger" style="width: 78%"></div>
+              </div>
+            </div>
+            <div class="insight-item mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small">Vehículos deportivos</span>
+                <span class="badge bg-warning">Medio riesgo</span>
+              </div>
+              <div class="progress mt-1" style="height: 4px;">
+                <div class="progress-bar bg-warning" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="insight-item">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small">Clientes antiguos</span>
+                <span class="badge bg-success">Bajo riesgo</span>
+              </div>
+              <div class="progress mt-1" style="height: 4px;">
+                <div class="progress-bar bg-success" style="width: 23%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="card analytics-card">
+          <div class="card-header">
+            <h6 class="card-title mb-0">Correlación de Variables de Riesgo</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="correlationMatrix"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastArea" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+  </main>
+
+  <script type="module" src="./js/analytics.js"></script>
+</body>
+</html>
