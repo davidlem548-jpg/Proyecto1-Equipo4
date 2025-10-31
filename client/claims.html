@@ -12,13 +12,21 @@
     <div class="container">
       <a class="navbar-brand fw-semibold" href="index.html">Seguros • Reclamos</a>
       <div class="d-flex gap-2">
-        <a class="btn btn-outline-secondary btn-sm" href="polizas.html">Pólizas</a>
+        <a class="btn btn-outline-secondary btn-sm" href="policies.html">Pólizas</a>
         <button id="themeBtn" class="btn btn-secondary btn-sm">Tema</button>
       </div>
     </div>
   </nav>
 
     <main class="container py-4">
+      <!-- Botón para agregar nuevo reclamo -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Gestión de Reclamos</h4>
+        <button id="btnAddClaim" class="btn btn-primary btn-sm">
+        Nuevo Reclamo
+        </button>
+      </div>
+
       <div class="d-flex flex-wrap gap-2 align-items-end">
         <div>
           <label class="form-label">Estado</label>
@@ -60,6 +68,70 @@
       <div id="toastArea" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
     </main>
 
-  <script type="module" src="./js/reclamos.js"></script>
+  <!-- Modal para agregar/editar reclamo -->
+  <div class="modal fade" id="claimModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="claimModalTitle">Nuevo Reclamo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="claimForm">
+            <div class="mb-3">
+              <label class="form-label">ID de Póliza *</label>
+              <input type="number" class="form-control" id="claimPolicyId" required placeholder="Ej. 1">
+              <small class="form-text text-muted">Número de póliza asociada al reclamo</small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción del Incidente *</label>
+              <textarea class="form-control" id="claimDescription" rows="3" required placeholder="Describa lo que sucedió..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Fecha del Incidente *</label>
+              <input type="date" class="form-control" id="claimDate" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tipo de Incidente *</label>
+              <select class="form-select" id="claimType" required>
+                <option value="">Seleccionar...</option>
+                <option value="Single Vehicle Collision">Colisión de Vehículo Único</option>
+                <option value="Multi-vehicle Collision">Colisión Múltiple</option>
+                <option value="Vehicle Theft">Robo de Vehículo</option>
+                <option value="Parked Car">Auto Estacionado</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Monto Reclamado *</label>
+              <input type="number" class="form-control" id="totalClaimAmount" required placeholder="5000">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Severidad</label>
+              <select class="form-select" id="claimSeverity">
+                <option value="">Seleccionar...</option>
+                <option value="Trivial Damage">Daño Trivial</option>
+                <option value="Minor Damage">Daño Menor</option>
+                <option value="Major Damage">Daño Mayor</option>
+                <option value="Total Loss">Pérdida Total</option>
+              </select>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="fraudReported">
+              <label class="form-check-label" for="fraudReported">
+                Marcar como posible fraude
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="btnSaveClaim">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./js/claims.js"></script>
 </body>
 </html>

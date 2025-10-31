@@ -1,2 +1,5 @@
 venv/
 .env
+CARACTERISTICAS.md
+SETUP_GUIDE.md
+load_data.ipynb
