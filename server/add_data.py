@@ -46,11 +46,11 @@ def clean_float(value: Any) -> Optional[float]:
 def get_or_create_insured(session: Session, row: Dict[str, Any]) -> Insured:
     """Get or create Insured record based on demographic combination"""
     # Check for existing insured with similar profile
-    age = int(row.get('age'))
+    age = clean_integer(row.get('age'))
     sex = clean_string(row.get('insured_sex'))
     education = clean_string(row.get('insured_education_level'))
     occupation = clean_string(row.get('insured_occupation'))
-    zip_code = int(row.get('insured_zip'))
+    zip_code = clean_integer(row.get('insured_zip'))
     
     # Try to find existing insured with matching demographics
     existing = session.exec(

@@ -4,7 +4,7 @@ from dotenv import load_dotenv # para cargar variables de entorno desde el .env
 
 load_dotenv()  # Cargar variables de entorno desde el .env
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./database.db")
 engine = create_engine(DATABASE_URL)
 
 def init_db():

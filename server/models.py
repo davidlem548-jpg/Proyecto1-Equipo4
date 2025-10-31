@@ -23,7 +23,9 @@ class Insured(SQLModel, table=True):
     
     # metodo financialScore()
     def financialScore(self):
-        return self.capital_gains - self.capital_loss
+        gains = self.capital_gains or 0
+        loss = self.capital_loss or 0
+        return gains - loss
 
 # -----------------------------
 # Clase: Policy
@@ -41,13 +43,15 @@ class Policy(SQLModel, table=True):
     cases: List["Case"] = Relationship(back_populates="policy")
     
     def parseCsl(self):
+        if not self.csl:
+            return {"perPerson": 0, "perAccident": 0}
         parts = self.csl.split("/")
         return {
             "perPerson": int(parts[0]), # cobertura de responsabilidad civil
             "perAccident": int(parts[1]) # cobertura de daños a terceros
         }
         
-    def coverageLevel(self):
+    def coverageLevel(self): # nivel de cobertura
         csl = self.parseCsl()
         if csl["perAccident"] >= 750:
             return "High"
