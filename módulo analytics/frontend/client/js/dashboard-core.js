@@ -1,5 +1,5 @@
 // Core Dashboard Functionality - Insurance Management System
-// Autor: David Fernando Ávila Díaz (CU: 197851)
+// Author: David Fernando Ávila Díaz (CU: 197851)
 // Sistema base para dashboard principal con gráficas
 
 class DashboardCore {
