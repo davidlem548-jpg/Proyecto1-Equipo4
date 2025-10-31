@@ -22,4 +22,5 @@ Para probar que funciona:
 * Casos: **http://127.0.0.1:8000/cases**
 * Insureds: **http://127.0.0.1:8000/insureds**
 * Gráficas: **http://localhost:5500/graficas/index.html**
+* Módulo Analytics: **https://dabtcavila.github.io/WebTeam-SOLO/**
 
