@@ -21,3 +21,5 @@ Para probar que funciona:
 * Estadísticas: **http://127.0.0.1:8000/stats**
 * Casos: **http://127.0.0.1:8000/cases**
 * Insureds: **http://127.0.0.1:8000/insureds**
+* Gráficas: **http://localhost:5500/graficas/index.html**
+
