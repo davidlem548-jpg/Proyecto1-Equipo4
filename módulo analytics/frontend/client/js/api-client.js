@@ -1,5 +1,5 @@
 // Professional API Client for Insurance System
-// Autor: David Fernando Ávila Díaz (CU: 197851)
+// Author: David Fernando Ávila Díaz (CU: 197851)
 // Cliente API robusto con cache y manejo de errores
 
 class InsuranceAPIClient {
